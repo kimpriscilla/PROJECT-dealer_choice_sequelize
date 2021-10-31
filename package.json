@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kimpriscilla/dealer_choice_js/issues"
   },
-  "homepage": "https://github.com/kimpriscilla/dealer_choice_js#readme"
+  "homepage": "https://github.com/kimpriscilla/dealer_choice_js#readme",
+  "dependencies": {
+    "nodemon": "^2.0.14"
+  }
 }
