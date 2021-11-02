@@ -1,0 +1,23 @@
+body {
+  background-color: lightblue;
+  font-family: verdana;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+ul {
+  color: white;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+a {
+  text-align: center;
+  color: black;
+}

@@ -1,24 +1,30 @@
 const express = require("express");
 const app = express();
+const morgan = require("morgan");
+const path = require("path");
 
-const books = ["Book 1", "Book 2", "Book 3"];
+const books = ["Cat 1", "Cat 2", "Cat 3"];
+
+app.use(morgan("dev"));
+app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
   res.send(`<html>
-    <head>
-    </head>
-      <body>
-        <h1>Self-Help Books</h1>
-        <ul>
-        ${books
-          .map((book, idx) => {
-            return `<li>
-            <a href ='/details/${idx}'>${book}</a>
-          </li>`;
-          })
-          .join("")}
-        </ul>
-      </body>
+  <head>
+  <link rel='stylesheet' href='/public/styles.css'/>
+  </head>
+    <body>
+      <h1>Breeds of Cats</h1>
+      <nav>
+      ${books
+        .map((book, idx) => {
+          return `
+          <a href ='/details/${idx}'>${book}</a>
+        `;
+        })
+        .join("")}
+      </nav>
+    </body>
   </html>`);
 });
 
