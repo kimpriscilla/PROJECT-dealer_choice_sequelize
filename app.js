@@ -17,11 +17,12 @@ app.get("/", (req, res) => {
   </head>
   <body>
     <div class="news-list">
-      <header><img src="/logo.png"/>BREED OF CATS</header>
+      <header>BREED OF CATS</header>
+      <div><img class="cat-logo" src="public/logo.jpg">
       ${cats
         .map(
           (cat) => `
-        <div class='news-item'>
+        <div class='cats-item'>
           <p>
           <a href='/cats/${cat.id}'><span class="news-position">${cat.id}. </span>${cat.breed}
           </p>
@@ -47,13 +48,13 @@ app.get("/cats/:id", (req, res) => {
     </head>
     <body>
       <div class="news-list">
-      <a href='/'> <header>HOME</header>
+       <header><a href = '/'>HOME</a></header>
           <div class='news-item'>
             <p>
-             <span class="news-position">${cat.breed} </span>
+             <span class="cat-breed">${cat.breed} </span>
              <div><img class="cat-image" src="${cat.image}">
             </p>
-            <p>${cat.fact}</p>
+            <p class = 'cat-fact'>${cat.fact}</p>
           </div>
       </div>
     </body>
