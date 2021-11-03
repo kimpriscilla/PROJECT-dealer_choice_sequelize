@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   const html = `<!DOCTYPE html>
   <html>
   <head>
-    <title>Wizard News</title>
+    <title>Cat Breeds</title>
     <link rel='stylesheet' href='/public/styles.css'/>
   </head>
   <body>
