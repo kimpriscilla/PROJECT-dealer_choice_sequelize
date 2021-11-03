@@ -3,21 +3,14 @@ body {
   font-family: verdana;
 }
 
-h1 {
+header {
   text-align: center;
-  color: white;
+  font-size: x-large;
+  text-decoration: bold;
 }
 
-ul {
-  color: white;
-}
-
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
 a {
   text-align: center;
   color: black;
+  text-decoration: none;
 }
