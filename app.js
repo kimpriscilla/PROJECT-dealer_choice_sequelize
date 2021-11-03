@@ -4,8 +4,6 @@ const morgan = require("morgan");
 const path = require("path");
 const data = require("./data");
 
-const books = ["Cat 1", "Cat 2", "Cat 3"];
-
 app.use(morgan("dev"));
 app.use("/public", express.static(path.join(__dirname, "public")));
 
@@ -50,11 +48,10 @@ app.get("/cats/:id", (req, res) => {
     <body>
       <div class="news-list">
       <a href='/'> <header>HOME</header>
-
           <div class='news-item'>
             <p>
              <span class="news-position">${cat.breed} </span>
-
+             <div><img class="cat-image" src="${cat.image}">
             </p>
             <p>${cat.fact}</p>
           </div>

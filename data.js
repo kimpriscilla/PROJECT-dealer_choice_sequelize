@@ -3,6 +3,7 @@ const data = [
     id: 1,
     breed: "American Short Hair",
     fact: "When describing the American Shorthair, the expression “happy medium” springs to mind. These all-American cats are medium in size, build, type, and temperament; they are neither too big nor too small, not overly cuddly nor distant, neither couch potatoes nor hyperactive. The American Shorthair is the perfect breed for those who want a cat that enjoys being in your lap but not in your face. American Shorthairs are known for their adaptable temperaments and quiet voices; they are sociable, easily trained, and adapt well to other animals and children. They generally do not like to be picked up; like their Pilgrim companions who left England to find freedom, they cherish their independence. Because of the American Shorthair’s history as a working cat, they make great companions in terms of health, strength, and vitality. American Shorthairs enjoy a good romp with their favorite humans, but can amuse themselves with a ball of paper just as well. They tend to remain active and playful well into their old age. Due to their barn cat background, ASHs have strong hunting instincts and enjoy catching and killing catnip mice—and real ones, too, if given access to the great outdoors, something that’s discouraged by breeders. Your indoor ASH will put presents on your pillow, usually well-killed catnip mice, and proudly wait for the well-deserved petting and praise.",
+    image: "/americanShort.png",
   },
   {
     id: 2,
