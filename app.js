@@ -16,15 +16,15 @@ app.get("/", (req, res) => {
     <link rel='stylesheet' href='/public/styles.css'/>
   </head>
   <body>
-    <div class="news-list">
+    <div class="cat-list">
       <header>BREED OF CATS</header>
       <div><img class="cat-logo" src="public/logo.jpg">
       ${cats
         .map(
           (cat) => `
-        <div class='cats-item'>
+        <div class='cat-item'>
           <p>
-          <a href='/cats/${cat.id}'><span class="news-position">${cat.id}. </span>${cat.breed}
+          <a href='/cats/${cat.id}'><span class="cat-id">${cat.id}. </span>${cat.breed}
           </p>
         </div>`
         )
@@ -47,9 +47,9 @@ app.get("/cats/:id", (req, res) => {
 
     </head>
     <body>
-      <div class="news-list">
+      <div class="cat-list">
        <header><a href = '/'>HOME</a></header>
-          <div class='news-item'>
+          <div class='cat-item'>
             <p>
              <span class="cat-breed">${cat.breed} </span>
              <div><img class="cat-image" src="${cat.image}">
