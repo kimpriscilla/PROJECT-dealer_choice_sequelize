@@ -8,11 +8,14 @@ router.get("/", async (req, res, next) => {
   try {
     const data = await client.query(
       `
-      SELECT * FROM cats
+      SELECT cats.id, cats.breed FROM cats
       `
     );
-    res.send(homePage(data.rows));
+    const cats = data.rows;
+    res.send(homePage(cats));
   } catch (error) {
     next(error);
   }
 });
+
+module.exports = router;
