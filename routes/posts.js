@@ -6,7 +6,7 @@ const detailsPage = require("../views/detailsPage");
 
 router.get("/", async (req, res, next) => {
   try {
-    const data = await client.get(
+    const data = await client.query(
       `
       SELECT * FROM cats
       `
