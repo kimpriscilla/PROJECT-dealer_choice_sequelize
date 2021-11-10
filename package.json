@@ -20,6 +20,7 @@
   "homepage": "https://github.com/kimpriscilla/dealer_choice_js#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "html": "^1.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.14",
     "pg": "^8.7.1"
