@@ -1,16 +1,15 @@
 const html = require("html");
 
-module.exports = (cats) => {
-  html`<!DOCTYPE html>
+module.exports = (cat) =>
+  `<!DOCTYPE html>
   <html>
   <head>
-
   <link rel='stylesheet' href='/public/styles.css'/>
 
   </head>
   <body>
     <div class="cat-list">
-     <header><a href = '/'>HOME</a></header>
+     <header><a href = '/cats'>HOME</a></header>
         <div class='cat-item'>
           <p>
            <span class="cat-breed">${cat.breed} </span>
@@ -21,4 +20,3 @@ module.exports = (cats) => {
     </div>
   </body>
   </html>`;
-};
