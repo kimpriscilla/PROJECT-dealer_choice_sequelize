@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app",
-    "seed": "psql -d dealer_choice_db -a -f ./seed.sql"
+    "start": "nodemon app"
   },
   "repository": {
     "type": "git",
@@ -23,6 +22,7 @@
     "html": "^1.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.14",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "sequelize": "^6.9.0"
   }
 }
