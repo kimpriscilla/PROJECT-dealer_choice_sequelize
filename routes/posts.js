@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    const [cats] = await Promise.all([Cat.findAll()]);
+    const cats = await Promise.all([Cat.findAll()]);
     res.send(
       `
   <html>
@@ -41,26 +41,36 @@ router.get("/", async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   try {
-    const cat = await Cat.findByPk(req.params.id);
-    res.send(`
-    <html>
-    <head>
-    <link rel='stylesheet' href='/public/styles.css'/>
+    const cat = await Promise.all([
+      Cat.findAll({
+        // where: { id: req.params.id },
+        // include: [Owner],
+      }),
+    ]);
 
-    </head>
-    <body>
-      <div class="cat-list">
-       <header><a href = '/cats'>HOME</a></header>
-          <div class='cat-item'>
-            <p>
-             <span id"cat-breed"><div>Breed:</div>${cat.breed} </span>
+    console.log("this is our cat!!!!", cat.dataValues);
+    // res.send(`
+    // <html>
+    // <head>
+    // <link rel='stylesheet' href='/public/styles.css'/>
 
-            </p>
-            <p id = 'cat-fact'><div>Fact:</div>${cat.fact}</p>
-          </div>
-      </div>
-    </body>
-    </html>`);
+    // </head>
+    // <body>
+    //   <div class="cat-list">
+    //    <header><a href = '/cats'>HOME</a></header>
+    //    <div>Cat Mom:
+    //    ${cat.dataValues.ownerId}</div>
+    //       <div class='cat-item'>
+    //         <p>
+    //          <span id"cat-breed"><div>Breed:</div>${cat.breed} </span>
+
+    //         </p>
+    //         <p id = 'cat-fact'><div>Fact:</div>${cat.fact}</p>
+
+    //       </div>
+    //   </div>
+    // </body>
+    // </html>`);
   } catch (error) {
     next(error);
   }

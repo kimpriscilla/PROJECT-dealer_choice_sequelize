@@ -50,8 +50,8 @@ const Owner = db.define("owner", {
   },
 });
 
-Cat.belongsTo(Owner, { as: "catMom" });
-Owner.hasOne(Cat, { as: "parent", foreignKey: "catMomId" });
+Cat.belongsTo(Owner);
+Owner.hasOne(Cat);
 
 const syncAndSeed = async () => {
   await db.sync({ force: true });
@@ -64,12 +64,14 @@ const syncAndSeed = async () => {
       })
     )
   );
+  console.log("you made it here!!!!!!!!!!!");
+
   const [priscilla, lucy, moe] = await Promise.all(
     ["priscilla", "lucy", "moe"].map((name) => Owner.create({ name }))
   );
-  await Cat.update({ catMomId: priscilla.id }, { where: { name: "Nabi" } }),
-    await Cat.update({ catMomId: lucy.id }, { where: { name: "Gami" } }),
-    await Cat.update({ catMomId: moe.id }, { where: { name: "Dani" } });
+  await Cat.update({ ownerId: priscilla.id }, { where: { name: "Nabi" } }),
+    await Cat.update({ ownerId: lucy.id }, { where: { name: "Gami" } }),
+    await Cat.update({ ownerId: moe.id }, { where: { name: "Dani" } });
 };
 
 module.exports = {
