@@ -51,7 +51,7 @@ const Owner = db.define("owner", {
 });
 
 Cat.belongsTo(Owner, { as: "catMom" });
-Owner.hasOne(Cat, { as: "catMomed", foreignKey: "catMomId" });
+Owner.hasOne(Cat, { as: "parent", foreignKey: "catMomId" });
 
 const syncAndSeed = async () => {
   await db.sync({ force: true });

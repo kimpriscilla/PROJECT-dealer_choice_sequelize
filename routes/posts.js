@@ -41,16 +41,8 @@ router.get("/", async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   try {
-    await Cat.findAll({
-      include: [
-        Owner,
-        {
-          model: Owner,
-          as: "catMomId",
-        },
-      ],
-    }),
-      res.send(`
+    const cat = await Cat.findByPk(req.params.id);
+    res.send(`
     <html>
     <head>
     <link rel='stylesheet' href='/public/styles.css'/>
