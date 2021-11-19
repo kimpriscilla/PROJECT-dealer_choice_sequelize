@@ -53,10 +53,10 @@ router.get("/:id", async (req, res, next) => {
        <header><a href = '/cats'>HOME</a></header>
           <div class='cat-item'>
             <p>
-             <span class="cat-breed">${cat.breed} </span>
+             <span id"cat-breed"><div>Breed:</div>${cat.breed} </span>
 
             </p>
-            <p class = 'cat-fact'>${cat.fact}</p>
+            <p id = 'cat-fact'><div>Fact:</div>${cat.fact}</p>
           </div>
       </div>
     </body>

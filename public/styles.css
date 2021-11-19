@@ -39,6 +39,13 @@ div p {
   text-align: center;
 }
 
-p .cat-fact {
+span #cat-breed {
   background-color: white;
+}
+#cat-fact {
+  text-align: center;
+}
+
+div {
+  text-align: center;
 }
