@@ -64,7 +64,7 @@ const syncAndSeed = async () => {
       })
     )
   );
-  console.log("you made it here!!!!!!!!!!!");
+  console.log("you made it here!!");
 
   const [priscilla, lucy, moe] = await Promise.all(
     ["priscilla", "lucy", "moe"].map((name) => Owner.create({ name }))
